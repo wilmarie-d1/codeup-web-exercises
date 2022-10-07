@@ -14,7 +14,7 @@
         return "Hello" + name + "!";
     }
 
-    console.log(sayHello(Wilmarie));
+    //console.log(sayHello(""));
     /**
      * TODO:
      * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -22,17 +22,22 @@
      *
      * console.log 'helloMessage' to check your work
      */
-
+    //console.log(sayHello("Wilmarie"));
+    let helloMessage = sayHello(" Wilmarie");
+    console.log(helloMessage);
     /**
      * TODO:
      * Store your name as a string in a variable named 'myName', and pass that
      * variable to the 'sayHello' function. You should see the same output in the
      * console.
      */
+    let myName = " Wilmarie";
+    console.log(sayHello(myName));
+
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
-    var random = Math.floor((Math.random() * 3) + 1);
+    let random = Math.floor((Math.random() * 3) + 1);
 
     /**
      * TODO:
@@ -51,7 +56,11 @@
      * different result everytime you refresh the page if you are using the random
      * number)
      */
+    function isTwo(number) {
+        return number == 2;
+    }
 
+    console.log(isTwo(random));
     /**
      * TODO:
      * Create a function named 'calculateTip' to calculate a tip on a bill at a
@@ -64,12 +73,24 @@
      * > calculateTip(0.15, 33.42) // returns 5.013
      */
 
+
+    let userBill = parseFloat(prompt("What is your total bill?"));
+    let userTip = parseFloat(prompt("What percent do you want to tip today?"));
+
+    function calculateTip (tippercent, billtotal) {
+
+        let tipAmount = (billtotal * tippercent) /100;
+
+           return alert("The tip will be $" + tipAmount);
+}
+       // calculateTip;
     /**
      * TODO:
      * Use prompt and alert in combination with your calculateTip function to
      * prompt the user for the bill total and a percentage they would like to tip,
      * then display the dollar amount they should tip
      */
+    calculateTip(userTip, userBill);
 
     /**
      * TODO:
@@ -85,4 +106,13 @@
      *
      * > applyDiscount(45.99, 0.12) // 40.4712
      */
-})();
+        let originalPrice = parseFloat(prompt("What is the price of the item?"));
+        let markdown = parseFloat(prompt("What is  the discount percent between 0 and 1?"));
+
+        function applyDiscount (price, discountPercent) {
+            let discountTotal = discountPercent * price;
+            let totalDiscount = price - (discountPercent * price);
+            return alert("Your total with the discount is " + totalDiscount + discount);
+    }
+           applyDiscount(markdown,originalPrice);
+}());
