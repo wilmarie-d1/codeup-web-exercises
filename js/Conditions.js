@@ -30,8 +30,8 @@ if (!(username === userUsername && password === userPassword)) {
     console.log("If you\'re wearing red shoes, you are dismissed.");
 } else if(shirt === "hawaiian") {
     console.log("If you're wearing a hawaiian shirt,  you are dismissed");
-} else if(pants === "plaid") {
-    console.log("If you are wearing plaid pants, you are dismissed.");
+    if(pants === "jeans") {
+    console.log("If you are wearing denim pants, you are dismissed.");
 } else if(jacket){
     console.log("If you're wearing a jacket, you're dismissed.");
 } else {
