@@ -1,4 +1,4 @@
-"use script"
+// "use script"
 
 //     function showMultiplicationTable (input) {
 //
@@ -44,7 +44,7 @@
 //          console.log(i.toString().repeat(i));
 //     }
 //
-            for (let i=100; i>=5; i-=5) {
-                console.log(i)
-        }
-//
+//             for (let i=100; i>=5; i-=5) {
+//                 console.log(i)
+//         }
+// //
