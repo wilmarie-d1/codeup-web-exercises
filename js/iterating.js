@@ -33,13 +33,14 @@ console.log(names[0]);
         for(let i = 0; i < names.length; i++) {
             console.log(names[i]);
         }
-
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(function(names) {
-        console.log("Here are the names " + names);
+    names.forEach(function(name) {
+        console.log("Here are the names " + name);
+        // names.forEach(name => console.log(name));
+
     })
     /**
      * TODO:
@@ -54,22 +55,22 @@ console.log(names[0]);
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-let arrayList = [1, 2, 3, 4, 5]
-let theIndex = arrayList.length
 
-function first () {
-     return (arrayList[0]);
-}
-function second() {
-   return (arrayList[1]);
-}
-function last () {
-    return (arrayList[4]);
+function first (arr) {
+     return arr[0];
 }
 
-console.log(first());
-console.log(second())
-console.log(last());
+function second(arr) {
+   return arr[1];
+}
+function last (arr) {
+    return arr[arr.length -1];
+}
+
+let firstIndex = first(names);
+console.log(firstIndex);
+    console.log(second(names));
+    console.log(last(names));
 
 
 })();
