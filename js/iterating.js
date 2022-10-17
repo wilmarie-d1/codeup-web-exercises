@@ -73,4 +73,5 @@ console.log(firstIndex);
     console.log(last(names));
 
 
+
 })();
