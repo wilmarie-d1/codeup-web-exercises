@@ -1,4 +1,4 @@
-(function() {
+// (function() {
     "use strict";
 
     /**
@@ -12,10 +12,10 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
     let person = {};
-   person.firstName = "Wilmarie";
-   person.lastName = " De La Cruz";
-   console.log(person.firstName);
-   console.log(person.lastName);
+    person.firstName = "Wilmarie";
+    person.lastName = " De La Cruz";
+    console.log(person.firstName);
+    console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -25,10 +25,16 @@
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    function sayHello () {
-        return ("Hello " + person.firstName + person.lastName + "!")
+    person.sayHello = function () {
+        return `Hello from ${person.firstName} ${person.lastName}!`;
     }
-    console.log(sayHello(person));
+        console.log(person.sayHello());
+
+
+    // function sayHello () {
+    //     return ("Hello " + person.firstName + person.lastName + "!")
+    // }
+    // console.log(sayHello(person));
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -51,14 +57,14 @@
     ];
 
     shoppers.forEach(function (shopper) {
-        let forTheLow = shopper.amount * .12;
-        let savedCoins = shopper.amount - (shopper.amount* .12);
-        console.log(shopper.name)
+        let forTheLow = (shopper.amount * .12.toFixed(2));
+        let savedCoins = shopper.amount - (shopper.amount* .12.toFixed(2));
+        console.log("Hey " + shopper.name + "!")
         if (shopper.amount < 200) {
-        console.log("Your total is $" + shopper.amount);
+        console.log("Your total is $" + shopper.amount.toFixed(2));
 
         }else{
-        console.log("Your total is $" + shopper.amount);
+        console.log("Hi! " + shopper.name + " your total is $" + shopper.amount);
         console.log("Your discount is $" + forTheLow);
         console.log("Your total with the discount is $" + savedCoins);
         }
@@ -72,7 +78,7 @@
      *
      * Example:
      * > console.log(books[0].title) // "The Salmon of Doubt"
-     * > console.log(books[0].author.firstName) // "Douglas"
+     * > console.log(books[0].author.firstName) // "Douglas"s
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
@@ -115,6 +121,9 @@ let books = [
     ]
 
 console.log(books);
+console.log(books[2].title);
+console.log(books[1].author.firstname)
+    console.log(books[3].author.lastname)
 
 
     /**
@@ -153,4 +162,36 @@ console.log(books);
      *   `showBookInfo` function.
      */
 
-})();
+        for(let i = 0; i < books.length; i++) {
+            console.log(`Book # ${i + 1}`);
+            console.log(`Title: ${books[i].title}`);
+            console.log("Author: " + books[i].author.firstname + " " + books[i].author.lastname);
+            console.log("---");
+        }
+
+            function createBook(bookTitle, author) {
+                author = author.split(" ");
+                let book = {
+                    title: bookTitle,
+                    author: {
+                        firstname: author[0],
+                        lastname: author[1],
+                    }
+                }
+                return book;
+            }
+
+            books.push(createBook("Akame Ga Kill!", "Takahiro"));
+            console.log(books);
+
+            function showBookInfo(book) {
+                console.log(`Book # ${books.indexOf(book) + 1 }`);
+                console.log(`Title: ${book.title}`);
+                console.log(`Author: ${book.author.firstname} ${book.author.firstname}`);
+        }
+            for (let i=0; i <books.length; i++) {
+                showBookInfo(books[i]);
+            }
+// console.log(books);
+
+// })();
