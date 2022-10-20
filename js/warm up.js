@@ -39,19 +39,54 @@
 // console.log(inBetween(45,100,76));
 //
 // //Create a function named "typePrinter" that accepts an array as an input, and logs the data type of each element to the console.
+// //
+//         let arr = [true, "Icon", 25, "66", false, 0];
 //
-        let arr = [true, "Icon", 25, "66", false, 0];
+//
+// function typePrinter (userArr) {
+//
+//     for(let i = 0; i < userArr.length;i++) {
+//
+//     console.log(typeof userArr[i]);
+//     }
+// }
+// typePrinter(arr);
+
+//Warm-Up:
+//
+// Create a function named "average" that takes in an array of numeric values, and returns the average. If any of the elements in the array are non-numeric, the function should return false.
+//
+// Ex:
+// average(["6", 5, 3, 2, 9])                       // returns 5
+// average([true, 6, 9, 3, 10])                     // returns false
+// average([{name: "Codey the Duck}, 10, 3, false]) // returns false
+// average([1, 2, 3, 4, 5])                         // returns 3
+// average(["5.5", "five", 3, 6, 7])                // returns false
 
 
-function typePrinter (userArr) {
+let lineUp = [1, 2, 3, 4, 5, 6]
+let aSign = [1, 1, 1, 2, 2, 2, 3, 3, 3]
+let notASign = ["one", 2, 3, "four"]
+let BibleThings = ["David", "Goliath", "Lamb", 12]
+let lessofASign = ["four", "three", "two", "one"]
 
-    for(let i = 0; i < userArr.length;i++) {
-
-    console.log(typeof userArr[i]);
-    }
+function isNumeric (input){
+    return !isNaN(parseFloat(input));
 }
-typePrinter(arr);
-
-
-
-
+function average (basic) {
+    let i = 0;
+    let tots = 0;
+    while (i < basic.length) {
+        if (isNumeric(basic[i])) {
+            tots += parseFloat(basic[i]);
+            i++;
+        return tots / basic.length;
+    }else {
+        return false;
+    }
+}}
+console.log(average(lineUp));
+console.log(average(aSign));
+console.log(average(notASign));
+console.log(average(BibleThings));
+console.log(average(lessofASign))
