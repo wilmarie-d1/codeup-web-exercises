@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Forms</title>
+</head>
+<body>
+<!--<form method="POST" action="https://request-inspector.glitch.me/">-->
+
+<!--    <label for="username">Username</label>-->
+<!--    <input id="username" name="username" type="text">-->
+<!--    <br>-->
+
+<!--    <label for="password">Password</label>-->
+<!--    <input id="password" name="password" type="password">-->
+<!--    <br>-->
+
+<!--    <input type="submit">-->
+<!--    <button type="Submit"></button>-->
+<!--   <br>-->
+<!--    <input type="text" name="email" placeholder="Enter your email address">-->
+<!--    <input type="password" name="password">-->
+<!--    <input type="submit">-->
+<!--    <button type="Submit"></button>-->
+
+<!--<form action="https://request-inspector.glitch.me" method="GET">-->
+<!--    <label for="zipcode">Zipcode</label>-->
+<!--    <input type="text" name="zipcode" id="zipcode" placeholder="input a zipcode">-->
+<!--    <button type="submit">Search</button>-->
+
+<!--        <label for="datetime">Date/Time</label>-->
+<!--        <input type="datetime-local" name="datetime" id="datetime">-->
+<!--</form>-->
+<form action="https://request-inspector.glitch.me" method="POST">
+<label for="username"></label>
+<input type="text" name="username" id="username" placeholder="Enter your username please">
+<label for="email">Email</label>
+<input type="email" name="email" id="email" placeholder="example@domain.com">
+    <p>What is your favorite color?</p>
+<label for="blue">Blue</label>
+    <input type="radio" name="favcolor" id="blue" value="blue">
+    <label for="red">Red</label>
+    <input type="radio" name="favcolor" id="red" value="red">
+    <label for="yellow">Yellow</label>
+    <input type="radio" name="favcolor" id="yellow" value="yellow">
+<br>
+    <br>
+    <p>What languages do you know?</p>
+    <label for="html">HTML</label>
+    <input type="checkbox" name="languages" id="html" value="html">
+    <label for="java">Java</label>
+    <input type="checkbox" name="languages" id="java" value="java">
+    <label for="javascript">Javascript</label>
+    <input type="checkbox" name="languages" id="javascript" value="javascript">
+    <br>
+    <br>
+    <select name="coffee_preference">
+        <option value="light">Light Roast</option>
+        <option value="dark">Dark Roast</option>
+        <option value="espresso">Espresso Blend</option>
+    </select>
+    <label for="volume"></label>
+    <input type="range" min="0" max="100" name="volume" id="volume">
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+
+</form>
+
+
+
+
+</body>
+</html>
