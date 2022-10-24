@@ -1,5 +1,43 @@
 
 .fancy-header {
-    color: mediumpurple;
+    color: saddlebrown;
     text-decoration: underline;
+    text-align: center
 }
+
+h2 {
+text-decoration: underline;
+    color: forestgreen;
+}
+
+html {
+    background-color: burlywood;
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fjoyrideharness.com%2Fblogs%2Fnews%2F25-funny-dog-memes-that-will-make-you-lol&psig=AOvVaw351LSQs7WVuvqc9mhd7YdD&ust=1666710736759000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPiomr2T-foCFQAAAAAdAAAAABAI");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Fasthand', cursive;
+
+}
+
+ul {
+    list-style-type: square;
+}
+
+table {
+    font-size: 30px;
+    padding: 25px;
+}
+
+a:link {
+    color: yellow;
+}
+a:hover{
+    color: orange;
+}
+a:visited{
+    color: crimson;
+}
+
+
+
+

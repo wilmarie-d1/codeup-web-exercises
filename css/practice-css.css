@@ -1,0 +1,49 @@
+/*Element selector */
+
+h1 {
+    /
+    color: mediumpurple;
+}
+
+/*Class selector */
+.underline {
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/*ID selector*/
+#font16 {
+    font-size: 16px;
+}
+/*Multiple Selectors - comma separated*/
+h2, h3, h4 {
+    color: hotpink;
+font-family: "Comic Sans MS";
+}
+
+p, .underline {
+    background-color: orange;
+}
+
+#lists .national-parks{
+    color: forestgreen;
+}
+
+#lists>div>.colors{
+    color: coral;
+}
+
+li.highlight {
+    font-weight: bolder;
+}
+
+.national-parks {
+    color: rebeccapurple;
+}
+
+.teambuilding {
+    background-image: url("./images/leadership.jpg");
+    background-size: cover;
+    width: 50px;
+    height: 100px;
+}
