@@ -89,4 +89,22 @@ console.log(average(lineUp));
 console.log(average(aSign));
 console.log(average(notASign));
 console.log(average(BibleThings));
-console.log(average(lessofASign))
+console.log(average(lessofASign));
+
+// Warm-up:
+//
+// Create a function named "filterNegativity" that accepts an array of numbers, and returns an array
+// with only positive numbers.
+//
+let badVibes = [5, -6, 2, 0, -5, -13] // returns [5, 2, 0,]
+let midVibes = [6, 8, 10, 4, 2, -9, -6]
+let bestVibes = [20, 40, 60, 80, 100, -10]
+
+function filterNegativity(goodVibes) {
+    let topVibes = goodVibes.filter(num => num > -1)
+        return topVibes;
+    }
+
+    console.log(filterNegativity(badVibes));
+console.log(filterNegativity(midVibes));
+console.log(filterNegativity(bestVibes));
