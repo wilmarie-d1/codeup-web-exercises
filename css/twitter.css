@@ -132,16 +132,16 @@ width: calc(25% + .5em);
 }
 .media-image{
     max-width: 50px;
-    float: initial;
+    float: left;
     margin-top: 1.33em;
 }
 .media-body {
-    float: initial;
-    width: calc(100% + 1.33em);
+    float: left;
+    width: calc(100% - 50px);
 }
 .profile-items{
     padding: 0;
-    list-style-type: none;
+    list-style: none;
 
 }
 .profile-entry{
