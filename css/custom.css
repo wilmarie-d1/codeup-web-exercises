@@ -1,3 +1,19 @@
-#background-image {
-    background-image: url("images/background-image.png")
+#jumbotron {
+    background-image: url("../images/background-image.png");
+    background-size: cover;
+    height: 364px;
+}
+.display-5 {
+    border: lightgray 3px ;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.card-body {
+    background-color: mediumpurple;
+    color: white;
 }
