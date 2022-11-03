@@ -1,10 +1,7 @@
-/*.container {*/
-    /*    width: 100%;*/
-    /*    position: fixed;*/
-    /*    z-index: 1000;*/
-    /*    border: gray 3px solid;*/
-    /*    background-color: gray;*/
-
+.container {
+    display: flex;
+    justify-content: space-between;
+}
 
 * {
     box-sizing: border-box;
@@ -56,10 +53,10 @@ nav a {
 
 #logo {
     font-size: 3em;
-    padding: .2em 0;
+    padding: .2em;
     font-family: Montserrat, sans-serif;
     align-content: center;
-    flex-grow: 1;
+    margin:  0;
 }
 
 
@@ -68,5 +65,4 @@ nav ul {
     padding: 0;
     display: flex;
     align-items: center;
-    margin: auto;
 }
