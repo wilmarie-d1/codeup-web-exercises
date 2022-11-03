@@ -14,6 +14,12 @@
 }
 
 .card-body {
-    background-color: mediumpurple;
+    background-color: red;
     color: white;
+}
+
+.navbar-expand-lg{
+    font-family: Montserrat, sans-serif;
+    text-decoration-color: rgb(220,52,68);
+
 }
