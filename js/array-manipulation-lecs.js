@@ -5,9 +5,9 @@
 // console.log(nums);
 
 let nameArr = ["jim", "joe", "jim", "john", "jim", "bob"];
-// console.log(nameArr.indexOf("john"));
-// console.log(nameArr.indexOf("jim"));
-// console.log(nameArr.lastIndexOf("jim"));
+console.log(nameArr.indexOf("john"));
+console.log(nameArr.indexOf("jim"));
+console.log(nameArr.lastIndexOf("jim"));
 
 //first arg will dictate that you remove everything before that index
 //second arg dictates that you remove everything past that index and that index itself
