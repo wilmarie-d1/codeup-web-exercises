@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="header">Welcome to the party!</h1>
+
+<p class="content">Here is my content!</p>
+
+<p class="content">This is pt. 2 of my content</p>
+
+<form name="login">
+    <div>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+<script>
+    // <!--Getting elements by ID-->
+    // document.getElementById("header");
+    // console.log(document.getElementById("header"));
+    // let header = document.getElementById("header");
+
+
+    <!--Getting elements by Class name-->
+    // let content =console.log(document.getElementsByClassName("content"));
+    // for(let i = 0; i < content.length; i++) {
+    //     console.log(content[i]);
+    // }
+
+    <!--Get element by Tag name-->
+   // let tagElements = document.getElementsByTagName("p");
+   //  for (let i < 0; i < tagElements.length; i++) {
+   //      console.log(tagElements[i])
+   //  }
+
+    <!--Get input from form-->
+    //     "use strict";
+    //     (function() {
+    //     // get the "username" input
+    //     let usernameInput = document.forms.login.username;
+    //
+    //     // log the value of the "username" input
+    //     console.log(usernameInput.value);
+    // })
+    // ();
+
+    <!--Accessing html content-->
+   // let header = document.getElementById("header");
+   //  header.innerHTML = "hello";
+   //  console.log(header.innerHTML);
+   //  console.log(header.innerText);
+
+    <!--Changing html attributes-->
+    let content = document.getElementById("header");
+    console.log(content.hasAttribute("id")); // returns true if yes
+    <!--Finding value of attribute-->
+    let html = document.getElementById("html");
+    // console.log(html.hasAttribute("lang"));
+    console.log(content.getAttribute("id"));
+    <!--setting or resetting the value of attributes-->
+    content.setAttribute("id", "headers");
+    console.log(content.getAttribute("id"));
+
+    let paragraphs = document.ge
+
+let pTags = document.getElementsByClassName("content")
+    for (let i = 0; i < content.length; i++){
+        pTags[i]
+    }
+
+
+
+</script>
+</body>
+</html>
