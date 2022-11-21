@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homemade Map</title>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <style>
+        #map {
+            width: 90%;
+            height: 700px;
+
+        }
+        html {
+            font-family: 'Fasthand', cursive;
+            background-color: sandybrown;
+
+        }
+        h1 {
+            text-align: center;
+            font-style: italic;
+            text-decoration: underline;
+            color: forestgreen;
+        }
+        h2 {
+            font-family: "Apple LiGothic";
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+<h1>Wilmarie's Favorite Restaurant</h1>
+</nav>
+<hr>
+<div id='map'></div>
+
+<!-- Mapbox JS -->
+<script src="../js/keys.js"></script> <!--Bring in keys file first-->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+    <script src="../js/mapbox-geocoder-utils.js"></script>
+<!--Custom JS-->
+<script>
+    mapboxgl.accessToken = MAPBOX_TOKEN; <!-- add in mapbox token-->
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/navigation-night-v1',
+        zoom: 4,
+        center: [-96.802944, 32.777995]
+    })
+    let marker = new mapboxgl.Marker()
+        .setLngLat([-82.51956974727072, 27.95165541360327]) //same as starting point in map
+        .addTo(map);
+
+    let popup = new mapboxgl.Popup()
+        .setLngLat([-82.51956974727072, 27.95165541360327])
+        .setHTML("<h2>Charley's Steak House</h2><p>Steak House in Tampa!</p>")
+        .addTo(map)
+
+    let favPlace = new mapboxgl.Popup()
+        .setHTML("<p>Favorite place in Tampa!</p>")
+
+    let markerMN = new mapboxgl.Marker()
+        .setLngLat([-93.28204727103711, 44.76991465954669]) //same as starting point in map
+        .addTo(map);
+
+    let popupMN = new mapboxgl.Popup()
+        .setLngLat([-93.28204727103711, 44.76991465954669])
+        .setHTML("<h2>Los Grandes</h2> <p>Favorite Mexican place</p>")
+        .addTo(map)
+
+    let favPlaceMN = new mapboxgl.Popup()
+        .setHTML("<p>Favorite Mexican place</p>")
+
+    marker.setPopup(favPlace)
+    marker.setPopup(markerMN)
+    marker.setPopup(popupMN)
+    marker.setPopup(popup)
+
+    // <!-- Mapbox Geocoder Util Methods -->
+
+        // the  geocode method from mapbox-geocoder-utils.js-->
+        geocode("4444 W Cypress St, Tampa, FL 33607", MAPBOX_TOKEN).then(function(result) {
+
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(18);
+        });
+        reverseGeocode({lng: -96.802944, lat: 32.777995}, MAPBOX_TOKEN).then(function(results) {
+            // logs the address for The Alamo
+            console.log(results);
+        });
+    geocode("251 Burnsville Pkwy, Burnsville, MN 55337", MAPBOX_TOKEN).then(function(result) {
+
+        console.log(result);
+        map.setCenter(result);
+        map.setZoom(18);
+    });
+    reverseGeocode({lng: -93.28204727103711, lat: 44.76991465954669}, MAPBOX_TOKEN).then(function(results) {
+        // logs the address for The Alamo
+        console.log(results);
+    });
+
+        function placeMarkerAndPopup(info, token, map) {
+            geocode(info.address, token).then(function () {
+                let popup = new mapboxgl.Popup()
+                // .setHTML(info.popupHTML);
+                let marker = new mapboxgl.Marker()
+                    .setLngLat([27.95165541360327, -82.51956974727072])
+                    .addTo(map)
+                    .setPopup(popup);
+                popup.addTo(map);
+            });
+        }
+
+</script>
+    </body>
+</html>
