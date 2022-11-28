@@ -1,20 +1,48 @@
 "use strict"
 
 let weatherAPI = "http://api.openweathermap.org/data/2.5/forecast";
+let accessToken = MAPBOX_TOKEN;
 
-$.ajax({
-    url: "http://api.openweathermap.org/data/2.5/weather",
-    type: "GET",
-    data: {
-        APPID: OPEN_WEATHER_APPID,
-        q:     "Dallas, US"
-    }
+mapboxgl.accessToken = MAPBOX_TOKEN;
+console.log("token" + accessToken)
+
+
+
+let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    zoom: 10,
+    center: [-96.802944, 32.777995]
+
 });
 
-$.get("http://api.openweathermap.org/data/2.5/weather", {
-    APPID: OPEN_WEATHER_APPID,
-    q:     "Dallas, US"
-}).done(function(data) {
-    console.log(data);
-});
 
+map.addControl(new mapboxgl.NavigationControl());
+
+$('#search-btn').click(() => {
+    const search = $('#search-input').val()
+    console.log(search)
+    geocode(search, mapboxgl.accessToken).then((location) => {
+        console.log(location)
+        map.setCenter(location)
+        map.setZoom(11)
+
+        let marker = new mapboxgl.Marker()
+            .setLngLat([location[0],location[1]])
+            .addTo(map)
+
+        ajaxCall(location)
+        revGeo(location[0], location[1])
+    })
+
+})
+
+// const successCallback = (position) => {
+//     console.log(position);
+// };
+//
+// const errorCallback = (error) => {
+//     console.log(error);
+// };
+//
+// navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
