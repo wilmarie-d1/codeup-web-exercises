@@ -37,6 +37,20 @@ $('#search-btn').click(() => {
 
 })
 
+let ajaxCall = (arr) => {
+    $.get(weatherAPI, {
+        APPID: OPEN_WEATHER_APPID,
+        lat: arr[1],
+        lon: arr[0],
+        units: "imperial"
+    }).done(function(data) {
+
+        let forecasts = data.list
+        let forecastHTML = append(forecasts)
+        $('#weather').html(forecastHTML)
+        console.log(forecasts)
+    })
+}
 // const successCallback = (position) => {
 //     console.log(position);
 // };
