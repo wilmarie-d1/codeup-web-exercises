@@ -1,0 +1,38 @@
+html {
+    background: url("../images/thunderstorm.jpeg") no-repeat;
+    background-size: cover;
+}
+
+#map {
+    /* the width and height may be set to any size */
+    width: 80%;
+    height: 700px;
+}
+li {
+    list-style: none;
+    text-align: left;
+}
+.card {
+    border: solid 3px blue;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    text-align: center;
+    flex-wrap: wrap;
+    margin: 5%;
+    height: auto;
+    width: 140%;
+
+}
+
+#weather {
+    display: flex;
+    justify-content: space-evenly;
+    overflow-wrap: anywhere;
+
+}
+p {
+    display: inline-block;
+}
+.input-group {
+    float:right;
+}
