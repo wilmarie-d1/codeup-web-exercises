@@ -10,7 +10,7 @@ console.log("token" + accessToken)
 
 let map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v9',
+    style: 'mapbox://styles/mapbox/navigation-night-v1',
     zoom: 10,
     center: [-96.802944, 32.777995]
 
@@ -57,53 +57,49 @@ let ajaxCall = (arr) => {
 
 }
 
-
-let append = (data) => {
-    let html = ``
-    for  (let i = 0; i < data.length; i += 8){
-        console.log(data[i]);
-        const {dt_txt,
-            main: {humidity, temp, temp_max, temp_min},
-            weather: [{description, icon}], wind: {speed}} = data[i]
-
-        html += `
-                                  
-<div class="container text-center">
-  <div class="row">
-                    <div class="card col">
-               <h6 class="card-header text-center" style="font-size: small">
-                ${dt_txt.substring(5,7)}.${dt_txt.substring(8,10)}.${dt_txt.substring(0,4)}
-               </h6>
-  <img src='http://openweathermap.org/img/w/${icon}.png' class="img-thumbnail d-block border-0" style='width: 100px; height: 100px;' alt="..."              <div class="card-body pt-0">
-                           <div class="card-body pt-0">
-
-              <h4 class="card-title text-center">${temp.toFixed(1)}ºF</h4>
-                <div class="d-flex justify-content-around" >
-                <p class="card-text  text-warning pe-1" style="font-size: small;">
-                H:${temp_max.toFixed(1)}ºF
-                </p>
-
-                <p class="card-text " style="font-size: small">
-                L:${temp_min.toFixed(1)}ºF
-                </p>
-                </div>
-
-              </div>
-              <ul class="list-group list-group-flush text-center">
-
-                <li class="humidity list-group-item" style="font-size: small">Humidity: ${humidity}%</li>
-                <li class="speed list-group-item" style="font-size: small">Wind: ${speed} mph</li>
-              </ul>
-              <div class="card-body p-0 ">
-              <p class="list-group-item bg-secondary text-light text-center ">${description.toUpperCase()}</p>
-              </div>
-            </div>
-            </div>
-            </div>
-            
-`}
-    return html
-}
+//
+// let append = (data) => {
+//     let html = ``
+//     for  (let i = 0; i < data.length; i += 8){
+//         console.log(data[i]);
+//         const {dt_txt,
+//             main: {humidity, temp, temp_max, temp_min},
+//             weather: [{description, icon}], wind: {speed}} = data[i]
+//
+//         html += `
+//        <div class="container text-center">
+//   <div class="row">
+//                     <div class="card col">
+//                <h6 class="card-header text-center" style="font-size: small">
+//                 ${dt_txt.substring(5,7)}.${dt_txt.substring(8,10)}.${dt_txt.substring(0,4)}
+//                </h6>
+//   <img src='http://openweathermap.org/img/w/${icon}.png' class="img-thumbnail d-block border-0" style='width: 100px; height: 100px;' alt="...">
+//     <div class="card-body pt-0">
+//                            <div class="card-body pt-0">
+//               <h4 class="card-title text-center">${temp.toFixed(1)}ºF</h4>
+//                 <div class="d-flex justify-content-around" >
+//                 <p class="card-text  text-warning pe-1" style="font-size: small;">
+//                 H:${temp_max.toFixed(1)}ºF
+//                 </p>
+//                 <p class="card-text " style="font-size: small">
+//                 L:${temp_min.toFixed(1)}ºF
+//                 </p>
+//                 </div>
+//               </div>
+//               <ul class="list-group text-center">
+//                 <li class="humidity list-group-item" style="font-size: small">Humidity: ${humidity}%</li>
+//                 <li class="speed list-group-item" style="font-size: small">Wind: ${speed} mph</li>
+//               </ul>
+//               <div class="card-body p-0 ">
+//               <p class="list-group-item  ">${description.toUpperCase()}</p>
+//               </div>
+//             </div>
+//             </div>
+//             </div>
+//
+// `}
+//     return html
+// }
 //REV-GEO LOCATION DISPLAY FUNCTION
 let revGeo = (lng, lat) => {
     reverseGeocode({lng, lat}, MAPBOX_TOKEN).then(function(results){
