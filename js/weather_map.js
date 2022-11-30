@@ -134,5 +134,5 @@ function geoLocation() {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 };
 
-console.log(geoLocation());
 
+console.log(geoLocation());
