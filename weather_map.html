@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 </head>
 <body>
-<nav class="imageGradient">
-    <img src="images/Wilmarie's%20weather.png" alt="logo" id="=img">
-</nav>
-<hr>
+<div class="jumbotron">
+    <img src="images/Wilmarie's%20weather.png" alt="logo" id="img">
+    <div class="container">
+</div>
+</div>
+
 <nav>
+
 <li class="nav-item">
     <p class="list-color">Current Location: <span id="city-name"></span> </p>
 </li>
@@ -30,51 +33,10 @@
     </div>
 </div>
 
-<div id="weather" class="container-fluid d-flex">
-<script>
-    let append = (data) => {
-    let html = ``
-    for  (let i = 0; i < data.length; i += 8){
-    console.log(data[i]);
-    const {dt_txt,
-    main: {humidity, temp, temp_max, temp_min},
-    weather: [{description, icon}], wind: {speed}} = data[i]
+<div class="container-fluid">
+    <div id="weather">
 
-    html += `
-    <div class="container text-center">
-        <div class="row">
-            <div class="card col">
-                <h6 class="card-header text-center" style="font-size: small">
-                    ${dt_txt.substring(5,7)}.${dt_txt.substring(8,10)}.${dt_txt.substring(0,4)}
-                </h6>
-                <img src='http://openweathermap.org/img/w/${icon}.png' class="img-thumbnail d-block border-0" style='width: 100px; height: 100px;' alt="...">
-                <div class="card-body pt-0">
-                    <div class="card-body pt-0">
-                        <h4 class="card-title text-center">${temp.toFixed(1)}ºF</h4>
-                        <div class="d-flex justify-content-around" >
-                            <p class="card-text  text-warning pe-1" style="font-size: small;">
-                                H:${temp_max.toFixed(1)}ºF
-                            </p>
-                            <p class="card-text " style="font-size: small">
-                                L:${temp_min.toFixed(1)}ºF
-                            </p>
-                        </div>
-                    </div>
-                    <ul class="list-group text-center">
-                        <li class="humidity list-group-item" style="font-size: small">Humidity: ${humidity}%</li>
-                        <li class="speed list-group-item" style="font-size: small">Wind: ${speed} mph</li>
-                    </ul>
-                    <div class="card-body p-0 ">
-                        <p class="list-group-item  ">${description.toUpperCase()}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        `} return html
-        }
-
-</script>
+    </div>
 </div>
 <!--5DAY FORECAST END-->
 
@@ -96,7 +58,8 @@
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-md-3 item">
+
+                <div class="col-sm-4 col-md-3 item">
                     <h3>Services</h3>
                     <ul>
                         <li><a href="#">Web design</a></li>
@@ -104,7 +67,7 @@
                         <li><a href="#">Hosting</a></li>
                     </ul>
                 </div>
-                <div class="col-sm-6 col-md-3 item">
+                <div class="col-sm-4 col-md-3 item">
                     <h3>About</h3>
                     <ul>
                         <li><a href="#">Company</a></li>
@@ -115,12 +78,6 @@
                 <div class="col-md-6 item text">
                     <h3>Wilmarie's Weather Watch</h3>
                     <p> Originally founded in 1972 in Dallas, Texas. WWW was first started because the owner Wilmarie was tired of being dressed inappropriately for the weather due to lack of weather information. She soon decided she would create her own place for unbiased weather information that helped anemic people start their day correctly by knowing the weather. It was all a dream given to her by God to put into motion, and through hard work and dedication, it came true. </p>
-                </div>
-                <div class="col item social">
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="icon ion-social-twitter"></i></a>
-                    <a href="#"><i class="icon ion-social-snapchat"></i></a>
-                    <a href="#"><i class="icon ion-social-instagram"></i></a>
                 </div>
             </div>
             <p class="copyright">Wilmarie's Weather Watch © 2018</p>
