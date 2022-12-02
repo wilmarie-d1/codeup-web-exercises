@@ -32,19 +32,18 @@ $('#search-btn').click(() => {
         let marker = new mapboxgl.Marker()
             .setLngLat([location[0], location[1]])
             .addTo(map)
-
+    })
+    // marker.on('dragend', function onDragEnd() {
+        //     const lngLat = marker.getLngLat();
+        //     let coordinates = lngLat.toArray()
+        //     console.log(lngLat.toArray())
+        //     getWeatherData(coordinates)
+        //     // console.log('Drag function:', 'lat:' + lngLat.lat, '/typeof: ' + typeof lngLat.lat, '/lng:' + lngLat.lng, '/typeof: ' + typeof lngLat.lng);
         ajaxCall(location)
         revGeo(location[0], location[1])
 
-    })
-    marker.on('dragend', function onDragEnd() {
-        const lngLat = marker.getLngLat();
-        let coordinates = lngLat.toArray()
-        console.log(lngLat.toArray())
-        getWeatherData(coordinates)
-        // console.log('Drag function:', 'lat:' + lngLat.lat, '/typeof: ' + typeof lngLat.lat, '/lng:' + lngLat.lng, '/typeof: ' + typeof lngLat.lng);
-    });
-})
+
+});
 
 let ajaxCall = (arr) => {
     $.get(weatherAPI, {
