@@ -61,9 +61,9 @@
             image: ""
         },
         {
-            name: "Los Grandes",
-            location: [],
-            type: "Steak House",
+            name: "Twisted Trompo",
+            location: [-96.8037814983988, 32.77675455070267],
+            type: "Taco Restuarant",
             image: ""
         },
         {
@@ -102,18 +102,24 @@
         console.log(results);
     });
 
-    function placeMarkerAndPopup(restaurant) {
-       restaurants.forEach(function () {
-           let popup = new mapboxgl.Popup()
-               // .setHTML('<img src="' + restaurant.image + <h3>" + restaurant.name + "</h3> + '<p>' + restaurant.type + '</p>');
-           var marker = new mapboxgl.Marker()
-               .setLngLat(restaurant.location)
-               .addTo(map)
-               .setPopup(popup);
-           popup.addTo(map);
-       })
+    var marker;
 
-        }
+    restaurants.forEach(function(restaurant){
+        var popup = new mapboxgl.Popup()
+            //.setHTML('<img src=' + restaurant.image + '> <h3>' + restaurant.name + '</h3> <p>' + restaurant.type + '</p>');
+            .setHTML('<h3>' + restaurant.name + '</h3> <p>' + restaurant.type + '</p>');
+        marker = new mapboxgl.Marker()
+            .setLngLat(restaurant.location)
+            .addTo(map)
+            .setPopup(popup);
+        popup.addTo(map);
+
+    });
+
+    $('#hide-button').click(function(){
+        marker = null;
+    });
+
 
 </script>
     </body>
